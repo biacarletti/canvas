@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREEPER</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var widowns= document.querySelector('canvas')
+        var paintBrush = widowns.getContext('2d');
+
+        paintBrush.fillStyle = 'darkgreen';
+        paintBrush.fillRect(200,50,350,300);
+
+        paintBrush.fillStyle = 'black';
+        paintBrush.fillRect(250, 110, 90, 90);
+        paintBrush.fill()
+
+        paintBrush.fillStyle = 'black';
+        paintBrush.fillRect(410, 110, 90, 90);
+        paintBrush.fill()
+
+        paintBrush.fillStyle = 'black';
+        paintBrush.fillRect(340,200, 70, 100);
+        paintBrush.fill()
+
+        paintBrush.fillStyle = 'black';
+        paintBrush.fillRect(300, 240,40, 110);
+        paintBrush.fillRect(410, 240,40, 110)
+        paintBrush.fill()
+
+        paintBrush.font = '20px Georgia';
+        paintBrush.fillStyle = 'black';
+        paintBrush.fillText("Isto é um Creeper do Mal??", 200   , 30);
+
+    </script>
+</body>
+</html>

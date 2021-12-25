@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var widowns = document.querySelector('canvas');
+        var paintBrush = widowns.getContext('2d');
+
+        paintBrush.fillStyle = 'grey';
+        paintBrush.fillRect(0, 0, 600, 400);
+        var desenha = false;
+
+        function desenhaCirculo(evento) {
+
+            if (desenha) {
+                var x = evento.pageX - widowns.offsetLeft
+                var y = evento.pageY - widowns.offsetTop
+                paintBrush.fillStyle = 'blue';
+                paintBrush.beginPath();
+                paintBrush.arc(x, y, 10, 0, 2 * 3.14);
+                paintBrush.fill()
+
+            }
+            console(x + "," + y);
+        }
+        widowns.onmousemove = desenhaCirculo
+        /* captura o movimento do mouse */
+
+        function habilitaDesenhar() {
+
+            desenha = true;
+        }
+
+        function desabilitaDesenhar() {
+
+            desenha = false;
+        }
+        widowns.onmousedown = habilitaDesenhar;
+
+        widowns.onmouseup = desabilitaDesenhar;
+
+
+
+    </script>
+</body>
+
+</html>
